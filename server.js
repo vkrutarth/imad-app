@@ -59,7 +59,7 @@ function createTemplate(data){
           </style>
       </head>
       <body>
-          <div class='app'>
+          <div class="app">
           <div>
               <a href="/">Home</a>
           </div>
