@@ -11,6 +11,6 @@ button.onclick=function () {
         }
     }
   };
-  request.open('GET','http://localhost:8080/count',true);
+  request.open('GET','http://vanesam.imad.hasura-app.io/count',true);
   request.send(null);
 };
