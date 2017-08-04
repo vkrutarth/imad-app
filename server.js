@@ -41,7 +41,7 @@ var articles ={
           Nation Comes First
       </p>`
     }
-}
+};
 function createTemplate(data){
   var title=data.title;
   var date=data.date;
@@ -90,6 +90,14 @@ app.get('/count',function(req,res){
   count=count+1;
   res.send(count.toString());
 });
+
+var names=[];
+app.get('/submit-name',function (req,res) {
+  var name=req.query.name;
+  names.push(name);
+  res.send(JSON.stringify(names));
+});
+
 app.get('/:articleName',function(req,res){
   var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName]));
@@ -108,7 +116,7 @@ app.get('/ui/madi.png', function (req, res) {
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
-var port = 80;
+var port = 8080;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
