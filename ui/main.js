@@ -1,17 +1,16 @@
-console.log('Loaded!');
+var button=document.getElementById('counts');
 
-
-var element=document.getElementById('main-text');
-element.innerHTML='new value';
-
-
-var img=document.getElementById('madi');
-var d=0;
-function movedown(){
-    d=d+1;
-    img.style.marginBottom=d+"px";
-}
-
-img.onclick=function() {
-    var time=setInterval(movedown,20);
+button.onclick=function () {
+  var request=new XMLHttpRequest();
+  request.onreadystatechange=function () {
+    if(request.readyState===XMLHttpRequest.DONE){
+        if(request.status===200){
+          var counter = request.responseText;
+          var s=document.getElementById('p');
+          s.innerHTML =counter.toString();
+        }
+    }
+  };
+  request.open('GET','http://localhost:8080/count',true);
+  request.send(null);
 };
