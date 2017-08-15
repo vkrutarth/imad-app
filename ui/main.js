@@ -11,7 +11,7 @@ button.onclick=function () {
         }
     }
   };
-  request.open('GET','http://vanesam.imad.hasura-app.io/count',true);
+  request.open('GET','http://vanesam.imad.hasura-app.io//count',true);
   request.send(null);
 };
 
@@ -37,7 +37,7 @@ submit.onclick=function () {
   };
   var nameInput=document.getElementById('name');
   var name=nameInput.value;
-  request.open('GET','http://vanesam.imad.hasura-app.io/submit-name?name='+name,true);
+  request.open('GET','http://vanesam.imad.hasura-app.io//submit-name?name='+name,true);
   request.send(null);
 
 };
