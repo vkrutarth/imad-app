@@ -41,7 +41,7 @@ var articles ={
           Nation Comes First
       </p>`
     }
-};
+}
 function createTemplate(data){
   var title=data.title;
   var date=data.date;
